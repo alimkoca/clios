@@ -1,0 +1,14 @@
+{
+	"Darwin": {
+		"CC": "i686-elf-gcc",
+		"CXX": "i686-elf-g++",
+		"LD": "i686-elf-ld",
+		"NASM": "nasm"
+	},
+	"Linux": {
+		"CC": "gcc",
+		"CXX": "g++",
+		"LD": "ld",
+		"NASM": "nasm"
+	}
+}
