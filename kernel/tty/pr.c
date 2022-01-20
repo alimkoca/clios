@@ -6,6 +6,8 @@ uint16_t curs_x = 0;
 uint16_t curs_y = 0;
 uint16_t* vid_mem = (uint16_t*)0xb8000;
 uint8_t att_byt = 0;
+uint8_t bg_color = 0;
+uint8_t fg_color = 15;
 
 static void curs_m(){
     uint16_t curs_pos = curs_y * 80 + curs_x;
@@ -36,9 +38,7 @@ static void scroll_sc(){
 }
 
 void print_put(char c){
-    uint8_t bc = 0;
-    uint8_t fc = 15;
-    att_byt = (bc << 4) | (fc & 0x0f);
+    att_byt = (bg_color << 4) | (fg_color & 0x0f);
     uint16_t att = att_byt << 8;
     uint16_t *loc;
 
@@ -82,8 +82,8 @@ void printk(char *c){
     }
 }
 
-void print_clear(){
-   uint8_t att_byt = (0 << 4) | (15 & 0x0F);
+void set_bg(){
+   uint8_t att_byt = (bg_color << 4) | (15 & 0x0F);
    uint16_t blk= 0x20 | (att_byt << 8);
    int i;
 
@@ -95,4 +95,12 @@ void print_clear(){
    curs_x = 0;
    curs_y = 0;
    curs_m();
-} 
+}
+
+void set_bg_color(uint8_t color){
+    bg_color = color;
+}
+
+void set_fg_color(uint8_t color){
+    fg_color = color;
+}
