@@ -3,10 +3,8 @@ sciencists and students.
 
 See docs/ for more documentation
 
-```
 For example, you need a system that performs fast calculations.
 and you will use it on robot or something
 this system can receive the command in the form of code stack or code in its shell system.
 it will calculate by processing it
 and will deliver the value to your systems.
-```
