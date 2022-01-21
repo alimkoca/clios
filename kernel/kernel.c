@@ -2,6 +2,7 @@
 #include "../include/port.h"
 #include "../include/type.h"
 #include "../include/gdt.h"
+#include "../include/get_input.h"
 #include "../include/math/def.h"
 
 extern void loaded(){
@@ -20,5 +21,6 @@ extern int kmain(){
 	printk("[ LOG ] Succesfully booted\n");
 	printk("[ LOG ] Loading Math Engine...\n");
 	load_math_eng();
-
+	printk("[ LOG ] Keyboard test, try type something: ");
+	getfsh();
 }

@@ -5,9 +5,8 @@
 #define b "ERR_MATH"
 #define dec 10
 
-uint8_t test_n1 = 10;
-uint8_t test_n2 = 9;
-char *test_sum;
+#define test_n1 10
+#define test_n2 9
 
 int load_math_eng();
 

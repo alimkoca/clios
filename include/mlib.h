@@ -1,5 +1,9 @@
 #include "type.h"
 
+uint32_t abs(int value) { 
+    return value < 0 ? 0 - value : value; 
+}
+
 void swap(char *x, char *y) {
     char t = *x; *x = *y; *y = t;
 }
